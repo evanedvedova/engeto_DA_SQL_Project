@@ -120,8 +120,8 @@ Výsledek a komentář: Pro vyhodnocení dlouhodobého trendu mezd v jednotlivý
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období?
 SQL soubor: `20251118 u2`
 
-
 Výsledek a komentář:
+Výsledky ukazují, že v roce 2006 v prvním kvartálu mohl průměrný zaměstnanec koupit přibližně 1243 bochníků chleba nebo 1287 litrů mléka, zatímco v roce 2018 v posledním kvartálu to bylo už 1425 bochníků chleba a 1747 litrů mléka. To znamená, že i přes nárůst cen potravin rostly mzdy rychleji, a kupní síla ve sledovaných kategoriích se tak zřetelně zvýšila. Nejvýraznější zlepšení je patrné u mléka, kde počet dostupných jednotek vzrostl o více než 35 %, což naznačuje, že zdražení mléka v daném období bylo relativně mírné ve srovnání s růstem mezd. 
 
 ## 3. Která kategorie potravin zdražuje nejpomaleji?
 
