@@ -34,15 +34,15 @@ Data byla agregována a sjednocena tak, aby bylo možné provádět meziroční 
 
 # Přehled datového workflow
 
-# **1. Extrakce**
+# **Extrakce**
 - Import dat z jednotlivých zdrojových tabulek.
 - Filtrování pouze relevantních hodnot (např. pro mzdy value_type_code 5958, což odpovídá hrubé mzdě na zaměstnance, a calculation_code 200, tedy přepočtený počet na osoby., pro celostátní ceny potravin region_code null).
 
-# **2. Transformace**
+# **Transformace**
 - Konsolidace mezd na úroveň čtvrtletí.
 - Agregace cen potravin na průměrné čtvrtletní ceny.
 
-# **3. Load**
+# **Load**
 - Vytvoření dvou finálních analytických tabulek:  
   - `t_eva_nedvedova_project_SQL_primary_final`  
   - `t_eva_nedvedova_project_SQL_secondary_final`
@@ -88,12 +88,25 @@ Vytvoření souboru je popsáno v souborech `20251118 create secondary table` a 
 |gini	|GINI koeficient|
 
 ---
-# Požadavky na spuštění
+# Jak projekt spustit (Setup & Execution)
 
+#**Požadavky**
 Databázový systém: PostgreSQL
 (používány funkce regr_slope, regr_intercept, corr, CTE).
 
 Dataset se strukturou odpovídající zdrojovým tabulkám.
+
+#**Kroky spuštění**
+
+Volitelné: vyvoření primární a sekundární tabulky
+-Vytvořte primární tabulku pomocí souboru `20251118 create primary table` 
+-Spusťte INSERT skript pro mzdy a spusťte INSERT skript pro ceny potravin pomocí souboru `20251118 primary table generator`
+-Vytvořte sekundární tabulku pomocí souboru `20251118 create secondary table`
+-Spusťte INSERT skript ekonomických dat pomocí souboru `20251125 secondary table generator`
+
+Spustění výzkumných otázek
+
+-Spouštějte jednotlivé analytické SQL dotazy dle výzkumných otázek.
 
 ---
 
@@ -102,7 +115,7 @@ Dataset se strukturou odpovídající zdrojovým tabulkám.
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 SQL soubor: `20251118 u1`
 
-Výsledek a komentář:
+Výsledek a komentář: Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (trend_sklon) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
 
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období?
 SQL soubor: `20251118 u2`
@@ -124,4 +137,6 @@ Výsledek a komentář:
 ## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin?
 
 Výsledek a komentář:
+
+### Závěr
 
