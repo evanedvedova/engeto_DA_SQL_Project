@@ -1,4 +1,4 @@
-# Analýza dostupnosti základních potravin a mezd v ČR
+# Analýza změn mezd, cen a dostupnosti potravin v ČR
 
 ## Autor
 Eva Nedvědová 
