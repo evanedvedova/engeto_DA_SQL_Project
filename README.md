@@ -115,28 +115,26 @@ Spustění výzkumných otázek
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 SQL soubor: `20251118 u1`
 
-Výsledek a komentář: Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (trend_sklon) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
+***Výsledek a komentář:*** Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (trend_sklon) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
 
-## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období?
+## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd??
 SQL soubor: `20251118 u2`
 
-Výsledek a komentář:
+***Výsledek a komentář:***
 Výsledky ukazují, že v roce 2006 v prvním kvartálu mohl průměrný zaměstnanec koupit přibližně 1243 bochníků chleba nebo 1287 litrů mléka, zatímco v roce 2018 v posledním kvartálu to bylo už 1425 bochníků chleba a 1747 litrů mléka. To znamená, že i přes nárůst cen potravin rostly mzdy rychleji, a kupní síla ve sledovaných kategoriích se tak zřetelně zvýšila. Nejvýraznější zlepšení je patrné u mléka, kde počet dostupných jednotek vzrostl o více než 35 %, což naznačuje, že zdražení mléka v daném období bylo relativně mírné ve srovnání s růstem mezd. 
 
-## 3. Která kategorie potravin zdražuje nejpomaleji?
-
+## 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
 SQL soubor: `20251118 u3`
 
-
-Výsledek a komentář:
+***Výsledek a komentář:*** Pro odstranění vlivu výkyvů cen byla spočítána pro jednotlivé kategorie meziroční procentuální změna ceny a poté průměr těchto změn mezi lety. To umožňuje zjistit dlouhodobý trend ve sledovaném období 2006-2018. Výsledek ukazuje, že nejpomaleji zdražující potravinou je cukr krystalový, který dokonce v dlouhodobém průměru o 1,92 % meziročně zlevňoval.
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (>10%)?
 
-Výsledek a komentář:
+***Výsledek a komentář:***
 
-## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin?
+## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
-Výsledek a komentář:
+***Výsledek a komentář:*** 
 
 ### Závěr
 
