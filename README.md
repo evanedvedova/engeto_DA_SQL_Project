@@ -34,22 +34,22 @@ Data byla agregována a sjednocena tak, aby bylo možné provádět meziroční 
 
 # Přehled datového workflow
 
-# **Extrakce**
+### **Extrakce**
 - Import dat z jednotlivých zdrojových tabulek.
 - Filtrování pouze relevantních hodnot (např. pro mzdy value_type_code 5958, což odpovídá hrubé mzdě na zaměstnance, a calculation_code 200, tedy přepočtený počet na osoby., pro celostátní ceny potravin region_code null).
 
-# **Transformace**
+### **Transformace**
 - Konsolidace mezd na úroveň čtvrtletí.
 - Agregace cen potravin na průměrné čtvrtletní ceny.
 
-# **Load**
+### **Load**
 - Vytvoření dvou finálních analytických tabulek:  
   - `t_eva_nedvedova_project_SQL_primary_final`  
   - `t_eva_nedvedova_project_SQL_secondary_final`
 
 Tyto tabulky fungují jako jediný zdroj pravdy (Single Source of Truth) pro následné analýzy.
 
-# Primární tabulka: `t_eva_nedvedova_project_SQL_primary_final`
+### Primární tabulka: `t_eva_nedvedova_project_SQL_primary_final`
 Obsahuje data o mzdách a cenách potravin v ČR.
 
 Vytvoření souboru je popsané v souboru `20251118 primary table generator`.
@@ -73,7 +73,7 @@ Při kopírování dat z tabulky czechia_price byly hodnoty aggregovány podle k
 | price_value | Cena potraviny (průměr, pro `prices`) |
 | category_code | Kód kategorie potraviny |
 
-# Sekundární tabulka: `t_eva_nedvedova_project_sql_secondary_final`
+### Sekundární tabulka: `t_eva_nedvedova_project_sql_secondary_final`
 
 Obsahuje doplňující data o evropských státech včetně hrubého domácího produktu (gdp).
 
@@ -88,15 +88,15 @@ Vytvoření souboru je popsáno v souborech `20251118 create secondary table` a 
 |gini	|GINI koeficient|
 
 ---
-# Jak projekt spustit (Setup & Execution)
+# Jak projekt spustit 
 
-#**Požadavky**
+### Požadavky
 Databázový systém: PostgreSQL
 (používány funkce regr_slope, regr_intercept, corr, CTE).
 
 Dataset se strukturou odpovídající zdrojovým tabulkám.
 
-#**Kroky spuštění**
+### Kroky spuštění
 
 Volitelné: vyvoření primární a sekundární tabulky
 -Vytvořte primární tabulku pomocí souboru `20251118 create primary table` 
@@ -110,7 +110,7 @@ Spustění výzkumných otázek
 
 ---
 
-### Výzkumné otázky a SQL dotazy
+# Výzkumné otázky a SQL dotazy
 
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 SQL soubor: `20251118 question 1`
@@ -141,7 +141,8 @@ SQL soubory: `20251118 question 5a` SQL soubor: `20251118 question 5b`
 
 ***Výsledek a komentář:*** Analýza nejprve vypočítává meziroční procentuální změny HDP, mezd a cen potravin a poté je porovnává v čase, aby bylo možné sledovat, zda výraznější růst HDP doprovází také rychlejší růst mezd nebo cen potravin ve stejném či následujícím roce. První dotaz `20251118 question 5a` poskytuje časovou řadu změn, mezi růsty těchto tří veličin se však neobjevuje zjevná vazba – v některých letech HDP roste a mzdy či ceny reagují různě, jindy HDP klesá a přesto mzdy rostou. Druhý dotaz `20251118 question 5b` pak pomocí lineární regrese a korelace kvantitativně ukazuje, že vztah mezi růstem HDP a růstem mezd či cen potravin je spíše slabý: korelace se pohybují mezi 0,21 a 0,66, hodnoty R² jsou nízké a regresní koeficienty ukazují jen mírnou tendenci růstu mezd a cen při růstu HDP. Celkově tedy data naznačují, že vývoj HDP má stabilní, ale omezený vliv na změny mezd a cen potravin, a to i s ročním zpožděním.
 
-### Závěr
+## Závěr
 Celkově analýza výzkumných otázek ukazuje, že mzdy mají dlouhodobě rostoucí trend ve všech odvětvích, ceny potravin se vyvíjejí různorodě, kupní síla se zpravidla zlepšuje a širší makroekonomický kontext, jako je vývoj HDP, má na tyto procesy omezený, ale stabilní vliv. Bylo by zajímavé tuto analýzu provést i pro roky 2021-2024, protože vysoké hodnoty inflace (15,1% v roce 2022, 10,7% v roce 2023) předčily inflaci během období v našem datasetu, který umožňoval srovnání ceny a mezd pro roky 2007-2018. Lze očekávat, že vývoj cen, mezd a kupní síly v tomto období může ukazovat zajímavé změny.
+
 
 
