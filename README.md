@@ -32,7 +32,16 @@ SQL dotazy používájí následující dvě tabulky, které byly vytvořeny pom
 
 Data byla agregována a sjednocena tak, aby bylo možné provádět meziroční a mezikategoriální porovnání.
 
-# Přehled datového workflow
+---
+
+## Struktura repozitáře
+
+Složka SQL_table_generators obsahuje soubory pro vytvoření dvou finálních analytických tabulek z primárních dat.
+Složka SQL_queries obsahuje SQL soubory pro zodpovězení výzkumných otázek.
+
+---
+
+## Přehled datového workflow
 
 ### **Extrakce**
 - Import dat z jednotlivých zdrojových tabulek.
