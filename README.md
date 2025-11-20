@@ -113,28 +113,35 @@ Spustění výzkumných otázek
 ### Výzkumné otázky a SQL dotazy
 
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
-SQL soubor: `20251118 u1`
+SQL soubor: `20251118 question 1`
 
 ***Výsledek a komentář:*** Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (trend_sklon) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
 
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd??
-SQL soubor: `20251118 u2`
+SQL soubor: `20251118 question 2`
 
-***Výsledek a komentář:***
+***Výsledek a komentář:*** Dotaz propojuje průměrné mzdy s cenami chleba a mléka ve stejných letech a čtvrtletích, aby vypočítal, kolik jednotek dané potraviny lze koupit za průměrnou mzdu. Pomocí číslování řádků pak vybere nejstarší a nejnovější dostupné období pro každou potravinu, takže lze jednoduše porovnat vývoj kupní síly v čase.
+
 Výsledky ukazují, že v roce 2006 v prvním kvartálu mohl průměrný zaměstnanec koupit přibližně 1243 bochníků chleba nebo 1287 litrů mléka, zatímco v roce 2018 v posledním kvartálu to bylo už 1425 bochníků chleba a 1747 litrů mléka. To znamená, že i přes nárůst cen potravin rostly mzdy rychleji, a kupní síla ve sledovaných kategoriích se tak zřetelně zvýšila. Nejvýraznější zlepšení je patrné u mléka, kde počet dostupných jednotek vzrostl o více než 35 %, což naznačuje, že zdražení mléka v daném období bylo relativně mírné ve srovnání s růstem mezd. 
 
 ## 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? 
-SQL soubor: `20251118 u3`
+SQL soubor: `20251118 question 3`
 
 ***Výsledek a komentář:*** Pro odstranění vlivu výkyvů cen byla spočítána pro jednotlivé kategorie meziroční procentuální změna ceny a poté průměr těchto změn mezi lety. To umožňuje zjistit dlouhodobý trend ve sledovaném období 2006-2018. Výsledek ukazuje, že nejpomaleji zdražující potravinou je cukr krystalový, který dokonce v dlouhodobém průměru o 1,92 % meziročně zlevňoval.
 
 ## 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (>10%)?
+SQL soubor: `20251118 question 4`
 
-***Výsledek a komentář:***
+***Výsledek a komentář:*** Dotaz nejprve vypočítá průměrné roční mzdy a jejich meziroční procentuální změny, stejným způsobem pak vypočítá meziroční změny průměrných cen potravin napříč jednotlivými kategoriemi. Tyto změny cen následně zprůměruje pro všechny kategorie za každý rok, aby vznikl jeden agregovaný ukazatel růstu cen potravin. V hlavní části pak spojí meziroční růst mezd a průměrný růst cen potravin podle roku a vypočítá jejich rozdíl.
+
+Výsledky ukazují, že žádný rok ve sledovaném obodbí 2007-2018 nepřekročil rozdíl 10% – nejvyšší zaznamenaný rozdíl byl v roce 2013 (+6,14%), což znamená, že i v nejméně příznivém roce se růst cen potravin neoddělil od růstu mezd tak výrazně, aby přesáhl stanovený limit 10 %.
 
 ## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
+SQL soubory: `20251118 question 5a` SQL soubor: `20251118 question 5b`
 
-***Výsledek a komentář:*** 
+***Výsledek a komentář:*** Analýza nejprve vypočítává meziroční procentuální změny HDP, mezd a cen potravin a poté je porovnává v čase, aby bylo možné sledovat, zda výraznější růst HDP doprovází také rychlejší růst mezd nebo cen potravin ve stejném či následujícím roce. První dotaz `20251118 question 5a` poskytuje časovou řadu změn, mezi růsty těchto tří veličin se však neobjevuje zjevná vazba – v některých letech HDP roste a mzdy či ceny reagují různě, jindy HDP klesá a přesto mzdy rostou. Druhý dotaz `20251118 question 5b` pak pomocí lineární regrese a korelace kvantitativně ukazuje, že vztah mezi růstem HDP a růstem mezd či cen potravin je spíše slabý: korelace se pohybují mezi 0,21 a 0,66, hodnoty R² jsou nízké a regresní koeficienty ukazují jen mírnou tendenci růstu mezd a cen při růstu HDP. Celkově tedy data naznačují, že vývoj HDP má stabilní, ale omezený vliv na změny mezd a cen potravin, a to i s ročním zpožděním.
 
 ### Závěr
+Celkově analýza výzkumných otázek ukazuje, že mzdy mají dlouhodobě rostoucí trend ve všech odvětvích, ceny potravin se vyvíjejí různorodě, kupní síla se zpravidla zlepšuje a širší makroekonomický kontext, jako je vývoj HDP, má na tyto procesy omezený, ale stabilní vliv. Bylo by zajímavé tuto analýzu provést i pro roky 2021-2024, protože vysoké hodnoty inflace (15,1% v roce 2022, 10,7% v roce 2023) předčily inflaci během období v našem datasetu, který umožňoval srovnání ceny a mezd pro roky 2007-2018. Lze očekávat, že vývoj cen, mezd a kupní síly v tomto období může ukazovat zajímavé změny.
+
 
