@@ -115,7 +115,7 @@ Spustění výzkumných otázek
 ## 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 SQL soubor: `20251118 question 1`
 
-***Výsledek a komentář:*** Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (trend_sklon) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
+***Výsledek a komentář:*** Pro vyhodnocení dlouhodobého trendu mezd v jednotlivých sektorech byl použit fit daty lineární regresí. Sklon přímky (slope) vyjadřuje průmerný mezičtvdletní růst mzdy. Tento sklon je pro všechna odvětví kladný, což znamená, že dlouhodobě mezi sledovaným časovým úsekem 2000-2021 mzdy rostou ve všech odvětvích. Nejrychleji mzdy rostou v odvětví Informační a komunikační činnosti a nejpomaleji v odvětví Ubytování, stravování a pohostinství. Metrika kvality modelu R², která je velmi vysoká (0,85–0,97), což znamená, že čas skutečně vysvětluje většinu variability mezd a trend je robustní. 
 
 ## 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd??
 SQL soubor: `20251118 question 2`
