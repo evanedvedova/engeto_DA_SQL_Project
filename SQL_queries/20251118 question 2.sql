@@ -15,7 +15,8 @@ SELECT
   payroll_value,
   record_year,
   record_quarter
-FROM t_eva_nedvedova_project_SQL_primary_final
+FROM 
+  t_eva_nedvedova_project_SQL_primary_final
 WHERE 
   value_type_code = 5958 --gross salary per employee
 AND calculation_code = 200 --recalculated value
@@ -48,4 +49,5 @@ WHERE
 ORDER BY 
   sub.record_year, sub.record_quarter, sub.category
 ;
+
 
