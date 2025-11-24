@@ -1,9 +1,9 @@
 WITH price_data AS (
 SELECT
-category,
-record_year,
-record_quarter,
-price_value
+  category,
+  record_year,
+  record_quarter,
+  price_value
 FROM
   t_eva_nedvedova_project_SQL_primary_final
 WHERE 
@@ -49,5 +49,6 @@ WHERE
 ORDER BY 
   sub.record_year, sub.record_quarter, sub.category
 ;
+
 
 
