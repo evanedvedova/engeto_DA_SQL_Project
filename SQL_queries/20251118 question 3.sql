@@ -12,8 +12,10 @@ SELECT
   y0.category,
   y0.record_year,
   ((y0.avg_price_per_year - y1.avg_price_per_year) / y1.avg_price_per_year) * 100 AS pct_change
-FROM avg_year AS y0
-LEFT JOIN avg_year AS y1
+FROM 
+  avg_year AS y0
+LEFT JOIN 
+  avg_year AS y1
 ON y0.category = y1.category
 AND y0.record_year = y1.record_year + 1
 )
@@ -31,3 +33,4 @@ ORDER BY
 LIMIT 1
 
 ;
+
