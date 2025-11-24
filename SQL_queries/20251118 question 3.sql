@@ -31,6 +31,6 @@ GROUP BY
 ORDER BY 
   average_pct_change ASC
 LIMIT 1
-
 ;
+
 
