@@ -6,4 +6,4 @@ SELECT
 FROM t_eva_nedvedova_project_sql_primary_final 
 WHERE industry_branch IS NOT null
 GROUP BY industry_branch 
-ORDER BY trend_sklon DESC;
+ORDER BY slope DESC;
