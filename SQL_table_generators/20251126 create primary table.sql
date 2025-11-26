@@ -1,4 +1,5 @@
-CREATE TABLE t_eva_nedvedova_project_SQL_primary_final (
+CREATE TABLE 
+    t_eva_nedvedova_project_SQL_primary_final (
     record_type VARCHAR(20),
     -- 'wages' nebo 'prices'
     record_year INT,
@@ -14,3 +15,4 @@ CREATE TABLE t_eva_nedvedova_project_SQL_primary_final (
     price_value NUMERIC(10, 1),
     category_code INT
 );
+
