@@ -1,6 +1,4 @@
 CREATE TABLE t_eva_nedvedova_project_SQL_primary_final (
-    id SERIAL PRIMARY KEY,
-    -- for all records
     record_type VARCHAR(20),
     -- 'wages' nebo 'prices'
     record_year INT,
