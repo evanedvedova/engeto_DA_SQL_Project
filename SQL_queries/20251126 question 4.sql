@@ -43,7 +43,8 @@ price_change_per_year AS (
     price_avg_year AS y0
     LEFT JOIN price_avg_year AS y1 ON y0.category = y1.category
     AND y0.record_year = y1.record_year + 1
-) --MAIN QUERY
+) 
+--MAIN QUERY
 SELECT
   w.record_year,
   round(wage_pct_change, 2) AS wage_change,
