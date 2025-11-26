@@ -2,21 +2,23 @@ SELECT
     industry_branch,
     round(
         regr_slope(
-            payroll_value,
-            record_year + (record_quarter -1) * 0.25
-        )
+            payroll_value::double precision,
+            (record_year + (record_quarter -1) * 0.25)::double precision
+        )::numeric,
+        2
     ) AS slope,
     round(
         regr_intercept(
-            payroll_value,
-            record_year + (record_quarter -1) * 0.25
-        )
+            payroll_value::double precision,
+            (record_year + (record_quarter -1) * 0.25)double precision
+        )::numeric,
+        2
     ) AS intercept,
     round(
         regr_r2(
-            payroll_value,
-            record_year + (record_quarter -1) * 0.25
-        ) :: numeric,
+            payroll_value::double precision,
+            (record_year + (record_quarter -1) * 0.25)double precision
+        ):: numeric,
         2
     ) AS r2
 FROM
@@ -27,3 +29,4 @@ GROUP BY
     industry_branch
 ORDER BY
     slope DESC;
+
