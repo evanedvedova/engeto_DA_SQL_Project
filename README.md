@@ -110,14 +110,14 @@ Dataset se strukturou odpovídající zdrojovým tabulkám.
 ### Kroky spuštění
 
 Volitelné: vyvoření primární a sekundární tabulky
--Vytvořte primární tabulku pomocí souboru `20251126 create primary table` 
--Spusťte INSERT skript pro mzdy a spusťte INSERT skript pro ceny potravin pomocí souborů `20251126 primary table insert wages` a `20251126 primary table insert prices`.
--Vytvořte sekundární tabulku pomocí souboru `20251126 create secondary table`
--Spusťte INSERT skript ekonomických dat pomocí souboru `20251126 secondary table insert`
+- Vytvořte primární tabulku pomocí souboru `20251126 create primary table` 
+- Spusťte INSERT skript pro mzdy a spusťte INSERT skript pro ceny potravin pomocí souborů `20251126 primary table insert wages` a `20251126 primary table insert prices`.
+- Vytvořte sekundární tabulku pomocí souboru `20251126 create secondary table`
+- Spusťte INSERT skript ekonomických dat pomocí souboru `20251126 secondary table insert`
 
 Spustění výzkumných otázek
 
--Spouštějte jednotlivé analytické SQL dotazy dle výzkumných otázek.
+- Spouštějte jednotlivé analytické SQL dotazy dle výzkumných otázek.
 
 ---
 
