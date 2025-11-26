@@ -148,7 +148,7 @@ SQL soubor: `20251126 question 4`
 Výsledky ukazují, že žádný rok ve sledovaném obodbí 2007-2018 nepřekročil rozdíl 10% – nejvyšší zaznamenaný rozdíl byl v roce 2013 (+6,14%), což znamená, že i v nejméně příznivém roce se růst cen potravin neoddělil od růstu mezd tak výrazně, aby přesáhl stanovený limit 10 %.
 
 ## 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
-SQL soubory: `20251126 question 5a` SQL soubor: `20251126 question 5b`
+SQL soubory: `20251126 question 5a` a `20251126 question 5b`
 
 ***Výsledek a komentář:*** Analýza nejprve vypočítává meziroční procentuální změny HDP, mezd a cen potravin a poté je porovnává v čase, aby bylo možné sledovat, zda výraznější růst HDP doprovází také rychlejší růst mezd nebo cen potravin ve stejném či následujícím roce. První dotaz `20251126 question 5a` poskytuje časovou řadu změn, mezi růsty těchto tří veličin se však neobjevuje zjevná vazba – v některých letech HDP roste a mzdy či ceny reagují různě, jindy HDP klesá a přesto mzdy rostou. Druhý dotaz `20251126 question 5b` pak pomocí lineární regrese a korelace kvantitativně ukazuje, že vztah mezi růstem HDP a růstem mezd či cen potravin je spíše slabý: korelace se pohybují mezi 0,21 a 0,66, hodnoty R² jsou nízké a regresní koeficienty ukazují jen mírnou tendenci růstu mezd a cen při růstu HDP. Celkově tedy data naznačují, že vývoj HDP má stabilní, ale omezený vliv na změny mezd a cen potravin, a to i s ročním zpožděním.
 
