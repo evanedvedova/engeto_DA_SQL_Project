@@ -17,9 +17,7 @@ wage_data AS (
   FROM
     data_academy_content.t_eva_nedvedova_project_SQL_primary_final
   WHERE
-    value_type_code = 5958 --gross salary per employee
-    AND calculation_code = 200 --recalculated value
-    AND industry_branch_code IS null
+    industry_branch_code IS null
 )
 SELECT
   sub.category AS item,
