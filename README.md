@@ -18,7 +18,7 @@ Výstupem projektu jsou:
 ---
 ## Datové zdroje
 
-V projektu byly pouzity datové zdroje z databáze data_academy_2025_09_10.
+V projektu byly použity datové zdroje z databáze data_academy_2025_09_10.
 
 Projekt využívá následující primární zdroje:
 - **Česká data o mzdách** (`czechia_payroll`)
