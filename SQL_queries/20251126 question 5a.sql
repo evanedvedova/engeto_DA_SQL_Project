@@ -76,7 +76,8 @@ price_change_per_year AS (
         AND curr.record_year = prev.record_year + 1
     GROUP BY
         curr.record_year
-) -- MAIN QUERY
+) 
+-- MAIN QUERY
 SELECT
     s.record_year,
     g.gdp_pct_change,
