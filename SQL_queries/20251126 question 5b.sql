@@ -98,7 +98,8 @@ lagged AS (
         LEFT JOIN price_change_per_year p USING(record_year)
     WHERE
         g.country = 'Czech Republic'
-) --MAIN QUERY
+) 
+--MAIN QUERY
 -- 1) WAGES
 SELECT
     'wages' AS metric,
