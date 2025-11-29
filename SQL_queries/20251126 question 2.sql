@@ -17,12 +17,14 @@ wage_data AS (
   FROM
     data_academy_content.t_eva_nedvedova_project_SQL_primary_final
   WHERE
-    industry_branch_code IS null
-)
+    industry_branch_code IS NULL
+    AND payroll_value IS NOT null
+) 
 SELECT
   sub.category AS item,
   sub.record_year AS year,
   sub.record_quarter AS quarter,
+  payroll_value,
   round(payroll_value / price_value) AS items_per_average_wage
 FROM
   (
