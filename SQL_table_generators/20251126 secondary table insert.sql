@@ -17,5 +17,6 @@ FROM
     LEFT JOIN countries AS c ON e.country = c.country
 WHERE
     c.continent = 'Europe'
-    AND e.year >= 2000 --to be consistent with primary table 
-    AND e.year <= 2021;
+    AND e.year >= 2006 --to be consistent with primary table 
+    AND e.year <= 2018;
+
