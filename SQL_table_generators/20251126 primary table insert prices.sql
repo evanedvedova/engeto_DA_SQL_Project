@@ -28,8 +28,8 @@ FROM
     LEFT JOIN czechia_price_category AS cpc ON cp.category_code = cpc.code
 WHERE
     cp.region_code IS NULL --for Czechia
-    and record_year >= 2006
-    and record_year <= 2018
+    and extract(year from date_from) >= 2006
+	and extract(year from date_from) <= 2018  
 GROUP BY
     prices_year,
     prices_quarter,
