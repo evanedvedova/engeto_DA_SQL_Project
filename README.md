@@ -46,11 +46,11 @@ Složka SQL_queries obsahuje SQL soubory pro zodpovězení výzkumných otázek.
 
 ### **Extrakce**
 - Import dat z jednotlivých zdrojových tabulek.
-- Filtrování pouze relevantních hodnot (např. pro mzdy value_type_code 5958, což odpovídá hrubé mzdě na zaměstnance, a calculation_code 200, tedy přepočtený počet na osoby., pro celostátní ceny potravin region_code null).
+- Filtrování pouze relevantních hodnot (mzdy s value_type_code 5958, což odpovídá hrubé mzdě na zaměstnance, a calculation_code 200, tedy přepočtený počet na osoby, pro celostátní ceny potravin region_code null, roky 2006-2018).
 
 ### **Transformace**
 - Konsolidace mezd na úroveň čtvrtletí.
-- Agregace cen potravin na průměrné čtvrtletní ceny.
+- Agregace cen potravin na průměrné čtvrtletní ceny v letech 2006-2018.
 
 ### **Load**
 - Vytvoření dvou finálních analytických tabulek:  
@@ -86,7 +86,7 @@ Při kopírování dat z tabulky czechia_price byly hodnoty aggregovány podle k
 
 ### Sekundární tabulka: `t_eva_nedvedova_project_sql_secondary_final`
 
-Obsahuje doplňující data o evropských státech včetně hrubého domácího produktu (gdp).
+Obsahuje doplňující data o evropských státech včetně hrubého domácího produktu (gdp) pro roky 2006-2018.
 
 Vytvoření souboru je popsáno v souborech `20251126 create secondary table` a `20251126 secondary table insert`.
 
