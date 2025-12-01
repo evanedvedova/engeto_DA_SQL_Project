@@ -25,7 +25,8 @@ FROM
 WHERE
     cp.value_type_code = 5958 --hruba mzda na zamestnance
     AND cp.calculation_code = 200 --prepocteny pocet
-    and record_year >= 2006
-    and record_year <= 2018
+    and payroll_year >= 2006
+	and payroll_year <= 2018
 ;
+
 
